@@ -27,11 +27,42 @@ public class Main {
 		// Node root = tree.buildTree(in, post, in.length);
 		// System.out.println("Preorder of the constructed tree : ");
 		// tree.preOrder(root);
-		
-		int arr[] = {12, 11, 13, 5, 6, 7};
-        HeapSort hs = new HeapSort();
-        hs.sort(arr);
-        System.out.println("Sorted array is");
-        hs.printArray(arr);
+
+		// int arr[] = {12, 11, 13, 5, 6, 7};
+		// HeapSort hs = new HeapSort();
+		// hs.sort(arr);
+		// System.out.println("Sorted array is");
+		// hs.printArray(arr);
+
+		DirectoryTree root = new DirectoryTree("a");
+		root.children.add(new DirectoryTree("b"));
+		root.children.add(new DirectoryTree("c"));
+		root.children.add(new DirectoryTree("d"));
+
+		DirectoryTree e = new DirectoryTree("e");
+		e.children.add(new DirectoryTree("h"));
+		e.children.add(new DirectoryTree("i"));
+
+		DirectoryTree f = new DirectoryTree("f");
+		f.children.add(new DirectoryTree("j"));
+
+		root.children.get(1).children.add(e);
+		root.children.get(1).children.add(f);
+		root.children.get(2).children.add(new DirectoryTree("g"));
+		// DirectoryTree.preOrderTraversal(root);
+		// System.out.println();
+		// DirectoryTree.postOrderTraversal(root);
+		// System.out.println();
+		// DirectoryTree.inOrderTraversal(root);
+		// System.out.println();
+		// // DirectoryTree.BreadthFirstSearch(root);
+		// System.out.println();
+		// DirectoryTree.DFS(root);
+		// System.out.println();
+		//LinkedList<DirectoryTree> path = new LinkedList<DirectoryTree>();
+		//DirectoryTree.findPathRecursive(root, new DirectoryTree("g"), path);
+		//System.out.println();
+		DirectoryTree.findPath(root, new DirectoryTree("f"));
+		System.out.println();
 	}
 }
